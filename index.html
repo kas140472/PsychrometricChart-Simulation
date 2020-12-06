@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Psychrometric Chart</title>
+    <link rel="stylesheet" href="sins/MOMstyle.css" />
+    <script src='sins/jquery.min.js'></script>
+    <script src='sins/jquery-ui.min.js'></script>
+    <script type="text/javascript" >
+
+        function body() {
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 0, 0);
+            };
+            imageObj.src = 'graph2.png';
+        }
+        //variables
+        var x = 700;
+        var y_start = 700;
+        var y_end = 701;
+        var z_start = -700;
+        var z_end = -700;
+        var x11 = 625;
+        var y11_start = 660;
+        var y11_end = 701;
+        var x0=580;
+        var y0_start = 700;
+        var y0_end = 701;
+        var time=10;
+
+        function check1() {
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+
+            draw1();
+            function draw1() {
+                context.beginPath();
+                // context.lineWidth = 2;
+                context.fill();
+                context.arc(700,700,3,0,2*Math.PI,false);
+                context.strokeStyle = "black";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 4;
+                // context.arc(700,700,3,0,2*Math.PI,false);
+                context.fill();
+                context.moveTo(y_start, x);
+                context.lineTo(y_end, x);
+                context.strokeStyle = "navy";
+                context.stroke();
+                y_end += 1;
+                if (y_end <= 1419) {
+                    setTimeout(draw1, time);
+                }
+            }
+
+            draw2();
+            function draw2() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(x, y_start);
+                context.lineTo(x, y_end);
+                context.strokeStyle = "green";
+                context.stroke();
+                y_end += 1;
+                if (y_end <= 945) {
+                    setTimeout(draw2, time);
+                }
+            }
+
+            draw3();
+            function draw3() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#FF8C00";
+                context.moveTo(-z_start, x);
+                context.lineTo(-z_end, x);
+                context.stroke();
+                z_end += 10;
+                if (z_end <= -580) {
+                    setTimeout(draw3, time);
+                }
+            }
+            draw6();
+            function draw6() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#87CEEB";
+                context.moveTo(700, 700);
+                context.lineTo(625, 660);
+                context.stroke();
+                z_end += 10;
+                if (z_end <= -580) {
+                    setTimeout(draw6, time);
+                }
+            }
+            draw4();
+            function draw4() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(x11, y11_start);
+                context.lineTo(x11, y11_end);
+                context.strokeStyle = "#87CEEB";
+                context.stroke();
+                y11_end += 1;
+                if (y11_end <= 945) {
+                    setTimeout(draw4, time);
+                }
+            }
+            draw0();
+            function draw0() {
+                context.beginPath();
+                context.lineWidth=6;
+                context.moveTo(x0, y0_start);
+                context.lineTo(x0, y0_end);
+                context.strokeStyle = "#FF8C00";
+                context.stroke();
+                y0_end += 1;
+                if (y0_end <= 945) {
+                    setTimeout(draw0, time);
+
+                }
+            }
+
+            if (document.getElementById('radio1').checked) {
+                document.getElementById('check1').style.visibility = 'visible';
+                document.getElementById('check3').style.visibility = 'hidden';
+                document.getElementById('check2').style.visibility = 'hidden';
+                // document.getElementById('simscreen').style.visibility = 'hidden';
+            } else {
+                // document.getElementById('simscreen1').style.visibility = 'visible';
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+            document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
+            document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
+            document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
+            document.getElementById("p11").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p22").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p33").innerHTML="Dew point temperature = Orange Line";
+
+        }
+        // //variables
+        var x1 = 890;
+        var y1_start = 890;
+        var y1_end = 890;
+        var z1_start = -890;
+        var z1_end = -890;
+        var x12 = 545;
+        var y12_start = 715;
+        var y12_end = 715;
+
+        var x01 = 175;
+        var y01_start = 890;
+        var y01_end = 890;
+        const time1=1;
+
+        function check2(){
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+
+            draw1();
+            function draw1() {
+                context.beginPath();
+                // context.lineWidth = 2;
+                context.fill();
+                context.arc(890,890,3,0,2*Math.PI,false);
+                context.strokeStyle = "black";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 4;
+                // context.arc(900,900,3,0,2*Math.PI,false);
+                context.fill();
+                context.moveTo(y1_start, 890);
+                context.lineTo(y1_end, 890);
+                context.strokeStyle = "navy";
+                context.stroke();
+                y1_end += 1;
+                if (y1_end <= 1419) {
+                    setTimeout(draw1, time1);
+                }
+            }
+            draw2();
+            function draw2() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(x1, y1_start);
+                context.lineTo(x1, y1_end);
+                context.strokeStyle = "green";
+                context.stroke();
+                y1_end += 1;
+                if (y1_end <= 945) {
+                    setTimeout(draw2, time1);
+                }
+            }
+            draw3();
+            function draw3() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#FF8C00";
+                context.moveTo(-z1_start,x1);
+                context.lineTo(-z1_end, x1);
+                //context.moveTo(900, 900);
+                //context.lineTo(545, 725);
+                context.stroke();
+                z1_end += 1;
+                if (z1_end <= -177) {
+                    setTimeout(draw3, time1);
+                }
+            }
+
+            draw6();
+            function draw6() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#87CEEB";
+                context.moveTo(890, 890);
+                context.lineTo(556, 715);
+                context.stroke();
+                z1_end += 10;
+                if (z1_end <= -128) {
+                    setTimeout(draw6, time1);
+                }
+            }
+
+            draw21();
+            function draw21() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(556, y12_start);
+                context.lineTo(556, y12_end);
+                context.strokeStyle = "#87CEEB";
+                context.stroke();
+                y12_end += 1;
+                if (y12_end <= 945) {
+                    setTimeout(draw21, time1);
+                }
+            }
+
+            draw01();
+            function draw01() {
+                context.beginPath();
+                context.lineWidth=6;
+                context.moveTo(x01, y01_start);
+                context.lineTo(x01, y01_end);
+                context.strokeStyle = "#FF8C00";
+                context.stroke();
+                y01_end += 0.25;
+                if (y01_end <= 945) {
+                    setTimeout(draw01, time);
+
+                }
+            }
+
+            if(document.getElementById('radio2').checked)
+            {
+                document.getElementById('check2').style.visibility = 'visible';
+                document.getElementById('check1').style.visibility = 'hidden';
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+            else
+            {
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+            document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
+            document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
+            document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
+            document.getElementById("p11").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p22").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p33").innerHTML="Dew point temperature = Orange Line";
+
+
+        }
+        // variables
+        var x3 = 750;
+        var y3_start = 750;
+        var y3_end = 750;
+        var z3_start = -750;
+        var z3_end = -750;
+
+        var x112 = 609;
+        var y112_start = 672;
+        var y112_end = 672;
+
+        var x011 = 512;
+        var y011_start = 750;
+        var y011_end = 750;
+        var time2=10;
+
+        function check3() {
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+            draw12();
+
+            function draw12() {
+                context.beginPath();
+                // context.lineWidth = 2;
+                context.fill();
+                context.arc(750, 750, 3, 0, 2 * Math.PI, false);
+                context.strokeStyle = "black";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 4;
+                // context.arc(750, 750, 3, 0, 2 * Math.PI, false);
+                context.fill();
+                context.moveTo(y3_start, x3);
+                context.lineTo(y3_end, x3);
+                context.strokeStyle = "navy";
+                context.stroke();
+                y3_end += 1;
+                if (y3_end <= 1419) {
+                    setTimeout(draw12, time2);
+                }
+
+            }
+
+            draw22();
+
+            function draw22() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(x3, y3_start);
+                context.lineTo(x3, y3_end);
+                context.strokeStyle = "green";
+                context.stroke();
+                y3_end += 1;
+                if (y3_end <= 945) {
+                    setTimeout(draw22, time2);
+                }
+            }
+
+            draw32();
+
+            function draw32() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#FF8C00";
+                context.moveTo(-z3_start, x3);
+                context.lineTo(-z3_end, x3);
+                //context.moveTo(750, 750);
+                //context.lineTo(610, 675);
+                context.stroke();
+                z3_end += 10;
+                if (z3_end <= -509) {
+                    setTimeout(draw32, time2);
+                }
+            }
+
+            draw6();
+            function draw6() {
+                context.beginPath();
+                context.lineWidth = 4;
+                context.strokeStyle = "#87CEEB";
+                context.moveTo(750, 750);
+                context.lineTo(610, 675);
+                context.stroke();
+                z3_end += 10;
+                if (z3_end <= -509) {
+                    setTimeout(draw6, time2);
+                }
+            }
+
+            draw211();
+
+            function draw211() {
+                context.beginPath();
+                context.lineWidth = 6;
+                context.moveTo(x112, y112_start);
+                context.lineTo(x112, y112_end);
+                context.strokeStyle = "#87CEEB";
+                context.stroke();
+                y112_end += 1;
+                if (y112_end <= 945) {
+                    setTimeout(draw211, time2);
+                }
+            }
+            draw011();
+            function draw011() {
+                context.beginPath();
+                context.lineWidth=6;
+                context.moveTo(x011, y011_start);
+                context.lineTo(x011, y011_end);
+                context.strokeStyle = "#FF8C00";
+                context.stroke();
+                y011_end += 1;
+                if (y011_end <= 945) {
+                    setTimeout(draw011, time2);
+
+                }
+            }
+
+            if (document.getElementById('radio3').checked) {
+                document.getElementById('check1').style.visibility = 'hidden';
+                document.getElementById('check2').style.visibility = 'hidden';
+                document.getElementById('check3').style.visibility = 'visible';
+            } else {
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+            document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
+            document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
+            document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
+            document.getElementById("p11").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p22").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p33").innerHTML="Dew point temperature = Orange Line";
+
+        }
+
+    </script>
+</head>
+<!--<body>-->
+<body onload="body();" >
+<noscript>
+    The simulation requires JavaScript to be enabled.
+</noscript>
+<div id="container">
+    <div id="simtitle">Psychrometric chart</div>
+    <div id="scroll_div" style="max-height:400px; max-width:550px;overflow: scroll;">
+        <canvas id="simscreen" height="1032px" width="1522px" >
+        </canvas>
+
+    </div>
+    <div style="width:200px;">
+    </div>
+    <div id="titleincanvas"></div>
+    <div id="commentboxleft">
+<!--        <p id="p1" style="line-height:0" style="height:3px;height:10px;width:10px;color:gray;background-color:red">></p>-->
+        <p id="p1" style="line-height:0"></p>
+        <p id="p2" style="line-height:0"></p>
+        <p id="p3" style="line-height:0"></p>
+    </div>
+    <div id="commentboxright">
+        <p id="p11" style="line-height:0"></p>
+        <p id="p22" style="line-height:0"></p>
+        <p id="p33" style="line-height:0"></p>
+    </div>
+    <div id="vartitle">VARIABLES</div>
+
+    <div id="variables">
+
+        <div class="variable">
+            <div class="varname">
+                <p style="position:absolute;left:-5px; top:-10px;font-family:verdana; font-size:12px;"><br>Dry Bulb<br> Temp:<br><br>Humidity<br>Ratio:<br><br>Relative <br> Humidity:<br><br>Wet Bulb<br> Temp:<br><br>Enthalpy:<br><br>Dew Point<br> Temp:<br></p>
+                <p id="check1"style="position:absolute;color:black;left:83px; top:2px;font-family:verdana; font-size:12px;">19.5 (<sup>o</sup>C)<br><br><br>0.009<br><br><br>70%<br><br><br>15.99 (<sup>o</sup>C)<br><br><br>44.7 kJ/kg<br><br>13.9 (<sup>o</sup>C)</p>
+                <p id="check2"style="position:absolute;color:black;left:83px; top:2px;font-family:verdana; font-size:12px;">29 (<sup>o</sup>C)<br><br><br>0.0022<br><br><br>9%<br><br><br>12.44 (<sup>o</sup>C)<br><br><br>34.85 KJ/kg<br><br>-6.25 (<sup>o</sup>C)</p>
+                <p id="check3"style="position:absolute;color:black;left:83px; top:2px;font-family:verdana; font-size:12px;">21.5 (<sup>o</sup>C)<br><br><br>0.0078<br><br><br>49%<br><br><br>14.87 (<sup>o</sup>C)<br><br><br>41.48 kJ/kg<br><br>10.38 (<sup>o</sup>C)</p>
+
+            </div>
+        </div>
+    </div>
+    <!--    DND-Title of region for controls display-->
+    <div id="ctrltitle">CONTROLS</div>
+    <!-- Region for User controls of simulation-->
+    <div id="controls" align="center">
+        EXAMPLE 1:<input type="radio" id="radio1"  name="chart" onclick="check1();"><br>
+        EXAMPLE 2:<input type="radio" id="radio2"  name="chart" onclick="check2();"><br>
+        EXAMPLE 3:<input type="radio" id="radio3"  name="chart" onclick="check3();"><br><br>
+        <img id="rotationbutton" onclick="location.reload();" src="sins/bluecwdull.png" />
+    </div>
+    <!-- DND-Copyright display-->
+    <div id="copyright" title="Developer : SOLVEr"> Copyright &copy; SOLVE The Virtual Lab @ NITK Surathkal </div>
+</div>
+<!--   Container div close-->
+</body>
+</html>
