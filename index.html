@@ -26,6 +26,7 @@
         <p id="p1" style="line-height:0"></p>
         <p id="p2" style="line-height:0"></p>
         <p id="p3" style="line-height:0"></p>
+        <p id="p4" style="line-height:0"></p>
     </div>
     <div id="commentboxright">
         <p id="p11" style="line-height:0"></p>
@@ -44,9 +45,9 @@
 <!--                <p id="check2"style="position:absolute;color:blue;left:90px; top:5px;font-family:verdana; font-size:14px;">29(<sup>o</sup>C)<br><br><br>0.002gm<br><br><br>8%<br><br><br>-2(<sup>o</sup>C)<br><br>0 J<br><br><br>13</p>-->
 <!--                <p id="check3"style="position:absolute;color:green;left:90px; top:5px;font-family:verdana; font-size:14px;">22.5(<sup>o</sup>C)<br><br><br>0.007gm<br><br><br>48%<br><br><br>10(<sup>o</sup>C)<br><br>30 J<br><br><br>300</p>-->
                 <p style="position:absolute;left:-5px; top:-10px;font-family:verdana; font-size:12px;"><br>Dry Bulb<br> Temp:<br><br>Humidity<br>Ratio:<br><br>Relative <br> Humidity:<br><br>Wet Bulb<br> Temp:<br><br>Enthalpy:<br><br>Dew Point<br> Temp:<br></p>
-                <p id="check1"style="position:absolute;color:red;left:83px; top:2px;font-family:verdana; font-size:12px;">19.5 (<sup>o</sup>C)<br><br><br>0.009<br><br><br>70%<br><br><br>15.99 (<sup>o</sup>C)<br><br><br>44.7 kJ/kg<br><br>13.9 (<sup>o</sup>C)</p>
-                <p id="check2"style="position:absolute;color:darkblue;left:83px; top:2px;font-family:verdana; font-size:12px;">29 (<sup>o</sup>C)<br><br><br>0.0022<br><br><br>9%<br><br><br>12.44 (<sup>o</sup>C)<br><br><br>34.85 KJ/kg<br><br>-6.25 (<sup>o</sup>C)</p>
-                <p id="check3"style="position:absolute;color:green;left:83px; top:2px;font-family:verdana; font-size:12px;">21.5 (<sup>o</sup>C)<br><br><br>0.0078<br><br><br>49%<br><br><br>14.87 (<sup>o</sup>C)<br><br><br>41.48 kJ/kg<br><br>10.38 (<sup>o</sup>C)</p>
+                <p id="check1"style="position:absolute;color:red;left:77px; top:2px;font-family:verdana; font-size:12px;">19.5 (<sup>o</sup>C)<br><br><br>0.009<br><br><br>To be found<br><br><br>15.99 (<sup>o</sup>C)<br><br><br>44.7 kJ/kg<br><br>13.9 (<sup>o</sup>C)</p>
+                <p id="check2"style="position:absolute;color:darkblue;left:77px; top:2px;font-family:verdana; font-size:12px;">29 (<sup>o</sup>C)<br><br><br>0.0022<br><br><br>9%<br><br><br>12.44 (<sup>o</sup>C)<br><br><br>To be found<br><br>-6.25 (<sup>o</sup>C)</p>
+                <p id="check3"style="position:absolute;color:green;left:77px; top:2px;font-family:verdana; font-size:12px;">21.5 (<sup>o</sup>C)<br><br><br>0.0078<br><br><br>49%<br><br><br>To be found<br><br><br>41.48 kJ/kg<br><br>10.38 (<sup>o</sup>C)</p>
             </div>
         </div>
     </div>
@@ -222,9 +223,10 @@
             document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
             document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
             document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
-            document.getElementById("p33").innerHTML="Wet bulb temperature = Light Blue Line";
-            document.getElementById("p11").innerHTML="Enthalpy = Black Line";
-            document.getElementById("p22").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p22").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p4").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p11").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p33").innerHTML="Relative Humidity = 70%";
 
         }
 
@@ -373,9 +375,10 @@
             document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
             document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
             document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
-            document.getElementById("p33").innerHTML="Wet bulb temperature = Light Blue Line";
-            document.getElementById("p11").innerHTML="Enthalpy = Black Line";
-            document.getElementById("p22").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p22").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p4").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p11").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p33").innerHTML="Enthalpy = 34.85 kJ/kg";
         }
 
 
@@ -505,12 +508,13 @@
         } else {
             document.getElementById('check3').style.visibility = 'hidden';
         }
-        document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
-        document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
-        document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
-        document.getElementById("p33").innerHTML="Wet bulb temperature = Light Blue Line";
-        document.getElementById("p11").innerHTML="Enthalpy = Black Line";
-        document.getElementById("p22").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p1").innerHTML="Dry bulb temperature = Green Line";
+            document.getElementById("p2").innerHTML="Humidity ratio = Navy Blue Line";
+            document.getElementById("p3").innerHTML="Relative Humidity = Red Line";
+            document.getElementById("p22").innerHTML="Wet bulb temperature = Light Blue Line";
+            document.getElementById("p4").innerHTML="Enthalpy = Black Line";
+            document.getElementById("p11").innerHTML="Dew point temperature = Orange Line";
+            document.getElementById("p33").innerHTML="Wet bulb temp = 14.87 <sup>o</sup>C";
     }
 
 
