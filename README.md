@@ -2,11 +2,11 @@
 
 <h5> About the Lab (Objective) : </h5>
 
-The main objective of this lab is to demonstrate the change in P-v graph of Stirling Cycle, as the pressure and volume variables change, as well as calculate and display the heat addition, heat rejection, net work output, and efficiency of the Stirling cycle.
+The main objective of this lab is to demonstrate how to read the psychrometric chart to determine the six psychrometric properties: dry bulb temperature, wet bulb temperature, relative humidity, dew point temperature, humidity ratio and enthalpy of an air-water mixture.
 
 <h5> Links: </h5>
-Virtual Labs: https://solve-nitk.github.io/vlab-phase4-mechanical/thermodynamics/exp-stirling-cycle/
+Virtual Labs: https://solve-nitk.github.io/vlab-phase4-mechanical/thermodynamics/exp-psychometric-chart/
 <br>
-Direct Simulation Link (Github): https://kas140472.github.io/StirlingCycle-Simulation/
+Direct Simulation Link (Github): https://kas140472.github.io/PsychrometricChart-Simulation/
 <br><br>
 Refer to 'Documentation' folder for documentation details.
