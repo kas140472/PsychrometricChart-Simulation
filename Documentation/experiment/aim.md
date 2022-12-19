@@ -1,0 +1,1 @@
+To demonstrate how to read the psychrometric chart to determine the six psychrometric properties: dry bulb temperature, wet bulb temperature, relative humidity, dew point temperature, humidity ratio and enthalpy of an air-water mixture.
